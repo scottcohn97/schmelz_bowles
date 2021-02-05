@@ -8,6 +8,6 @@ This code provides Figure 2, Panel A and B.
 
 
 <p float="left">
-  <img src="schmelz_bowles_01.pdf" width="100" />
-  <img src="schmelz_bowles_02.pdf" width="100" /> 
+  <img src="output/schmelz_bowles_01.jpg" width="200" />
+  <img src="output/schmelz_bowles_02.jpg" width="200" /> 
 </p>
