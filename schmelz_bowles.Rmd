@@ -458,8 +458,8 @@ df_norm <-
 pdf_plot1 <- df_norm %>%
   ggplot() +
   geom_vline(aes(xintercept = 0), color = "grey") +
-  geom_line(aes(x = x1, y = y1p, color = "#c10534"), linetype = 1, size = 1.2) +
-  geom_line(aes(x = x2, y = y2p, color = "#0000ff"), linetype = 1, size = 1.2) + 
+  geom_line(aes(x = x1, y = y1p, color = "#0000ff"), linetype = 1, size = 1.2) +
+  geom_line(aes(x = x2, y = y2p, color = "#c10534"), linetype = 1, size = 1.2) + 
   NULL
 
 pdf_plot2 <- pdf_plot1 +
@@ -470,7 +470,7 @@ pdf_plot2 <- pdf_plot1 +
     expression(paste(italic(delta^{e} * (f)))), 
     expression(paste(italic(delta^{v} * (f))))
     )) +
-  labs(x = bquote("Fraction vaccinated, " * italic(f) * ", " * italic(f[t])),
+  labs(x = bquote("Fraction vaccinated, " * italic(f)),
        y = "Fraction") +
   #coord_equal() +
   theme_minimal() + 
@@ -523,11 +523,12 @@ cdf_plot1 <- df_norm %>%
 
 cdf_plot2 <- cdf_plot1 + 
   scale_x_continuous(limits = c(0,1.005), expand = c(0, 0),
-    breaks = c(0.05, 0.5, 0.8063, 0.95),
-    labels = c(expression(italic(f^{ paste(e,"*",L)})), 
-             expression(italic(f^{ paste(e,",", min)})), 
-             expression(italic(f^{ paste(e,"*",H)})), 
-             bquote(italic(f^{ paste(v,"*",H)}) == phantom() * "1.0"))) + 
+    breaks = c(0.0, 1.0),
+    labels = c("0.0",
+             #expression(italic(f^{ paste(e,"*",L)})), 
+             #expression(italic(f^{ paste(e,",", min)})), 
+             #expression(italic(f^{ paste(e,"*",H)})), 
+             "1.0")) + 
   scale_y_continuous(limits = c(0,1.01), expand = c(0, 0),
     breaks = c(0.02275, 0.115, 1), 
     labels = c(expression(italic(w[0]^e)), 
@@ -540,7 +541,7 @@ cdf_plot2 <- cdf_plot1 +
                bquote(italic(p[t+1]^e) * italic((f[t])) * ", prefer being vacc at " * italic(t+1) * " if enf"),
                bquote(italic(p[t+1]^v) * italic((f[t])) * ", prefer being vacc at " * italic(t+1) * " if vol")),
                guide = guide_legend(reverse = TRUE)) +  
-  labs(x = bquote(delta (f)), y = "Fraction") + 
+  labs(x = bquote("Fraction, " * f), y = "Fraction") + 
   coord_equal() +
   theme_minimal() + 
   theme(
