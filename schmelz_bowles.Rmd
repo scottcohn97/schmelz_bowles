@@ -85,8 +85,8 @@ p3 <- p2 +
                #expression(italic(f^{ paste(v,"*",H)} == phantom()), "1.0"))) +
   scale_y_continuous(limits = c(0,1.01), expand = c(0, 0),
     breaks = c(0.148, 0.21, 1), 
-    labels = c(expression(italic(w[0]^e)), 
-               expression(italic(w[0]^v)), 
+    labels = c(expression(italic(p[0]^e)), 
+               expression(italic(p[0]^v)), 
                "1.0")) +
   # color
   scale_color_manual(name = element_blank(),
@@ -119,8 +119,8 @@ p3
 
 ```{r}
 # Save plot
-ggsave(file = "output/schmelz_bowles_01.pdf", plot = p3, width = 7, height = 7)
-ggsave(file = "output/schmelz_bowles_01.png", plot = p3, width = 7, height = 7)
+ggsave(file = "output/PNAS_updates/schmelz_bowles_01.pdf", plot = p3, width = 7, height = 7)
+ggsave(file = "output/PNAS_updates/schmelz_bowles_01.png", plot = p3, width = 7, height = 7)
 ```
 
 ## Panel 2
@@ -168,8 +168,8 @@ g3 <- g2 +
                "1.0")) +
   scale_y_continuous(limits = c(0,1.01), expand = c(0, 0),
     breaks = c(0.045, 0.11, 1), 
-    labels = c(expression(italic(w[0]^e)), 
-                expression(italic(w[0]^v)), 
+    labels = c(expression(italic(p[0]^e)), 
+                expression(italic(p[0]^v)), 
                "1.0")) +
   # color
   scale_color_manual(name = element_blank(),
@@ -202,8 +202,8 @@ g3
 
 ```{r}
 # Save plot
-ggsave(file = "output/schmelz_bowles_02.pdf", plot = g3, width = 7, height = 7)
-ggsave(file = "output/schmelz_bowles_02.png", plot = g3, width = 7, height = 7)
+ggsave(file = "output/PNAS_updates/schmelz_bowles_02.pdf", plot = g3, width = 7, height = 7)
+ggsave(file = "output/PNAS_updates/schmelz_bowles_02.png", plot = g3, width = 7, height = 7)
 ```
 
 ## Vacc Distro
@@ -471,7 +471,7 @@ pdf_plot2 <- pdf_plot1 +
     expression(paste(italic(delta^{v} * (f))))
     )) +
   labs(x = bquote("Fraction vaccinated, " * italic(f)),
-       y = "Fraction") +
+       y = bquote(italic(delta(f)))) +
   #coord_equal() +
   theme_minimal() + 
   theme(
@@ -513,8 +513,8 @@ cols <- c("LINE1"="#636363","LINE2"="#c10534","LINE3"="#0000ff")
 cdf_plot1 <- df_norm %>%
   ggplot() +
   geom_line(aes(x = x1, y = x1, color = "LINE1"), linetype = 1, size = 0.8) + 
-  geom_curve(aes(x = .1, y = 0, xend = sqrt(2)/20, yend = sqrt(2)/20), 
-             data = df_norm, curvature = 0.2, color = "#636363") +
+  # geom_curve(aes(x = .1, y = 0, xend = sqrt(2)/20, yend = sqrt(2)/20), 
+  #            data = df_norm, curvature = 0.2, color = "#636363") +
   geom_line(aes(x = x1, y = y1c, color = "LINE2"), 
             linetype = 1, size = 1.2) + 
   geom_line(aes(x = x2, y = y2c, color = "LINE3"), 
@@ -531,8 +531,8 @@ cdf_plot2 <- cdf_plot1 +
              "1.0")) + 
   scale_y_continuous(limits = c(0,1.01), expand = c(0, 0),
     breaks = c(0.02275, 0.115, 1), 
-    labels = c(expression(italic(w[0]^e)), 
-             expression(italic(w[0]^v)), 
+    labels = c(expression(italic(p[0]^e)), 
+             expression(italic(p[0]^v)), 
              "1.0")) +
   # color
   scale_color_manual(name = element_blank(),
@@ -541,7 +541,7 @@ cdf_plot2 <- cdf_plot1 +
                bquote(italic(p[t+1]^e) * italic((f[t])) * ", prefer being vacc at " * italic(t+1) * " if enf"),
                bquote(italic(p[t+1]^v) * italic((f[t])) * ", prefer being vacc at " * italic(t+1) * " if vol")),
                guide = guide_legend(reverse = TRUE)) +  
-  labs(x = bquote("Fraction, " * f), y = "Fraction") + 
+  labs(x = bquote("Fraction, " * italic(f[t])), y = "Fraction") + 
   coord_equal() +
   theme_minimal() + 
   theme(
@@ -572,8 +572,8 @@ cdf_plot2
 ```
 
 ```{r}
-ggsave("output/trunc_cdf_plot.pdf", plot = cdf_plot2, device = cairo_pdf())
-ggsave("output/trunc_cdf_plot.png", plot = cdf_plot2)
+ggsave("output/PNAS_updates/trunc_cdf_plot.pdf", plot = cdf_plot2, device = cairo_pdf())
+ggsave("output/PNAS_updates/trunc_cdf_plot.png", plot = cdf_plot2)
 ```
 
 ## Session Info
