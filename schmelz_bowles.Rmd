@@ -119,8 +119,8 @@ p3
 
 ```{r}
 # Save plot
-ggsave(file = "output/PNAS_updates/schmelz_bowles_01.pdf", plot = p3, width = 7, height = 7)
-ggsave(file = "output/PNAS_updates/schmelz_bowles_01.png", plot = p3, width = 7, height = 7)
+ggsave(file = "output/PNAS_updates/schmelz_bowles_01.eps", plot = p3, width = 7, height = 7)
+ggsave(file = "output/PNAS_updates/schmelz_bowles_01.tiff", plot = p3, width = 7, height = 7)
 ```
 
 ## Panel 2
@@ -202,8 +202,8 @@ g3
 
 ```{r}
 # Save plot
-ggsave(file = "output/PNAS_updates/schmelz_bowles_02.pdf", plot = g3, width = 7, height = 7)
-ggsave(file = "output/PNAS_updates/schmelz_bowles_02.png", plot = g3, width = 7, height = 7)
+ggsave(file = "output/PNAS_updates/schmelz_bowles_02.eps", plot = g3, width = 7, height = 7)
+ggsave(file = "output/PNAS_updates/schmelz_bowles_02.tiff", plot = g3, width = 7, height = 7)
 ```
 
 ## Vacc Distro
@@ -305,8 +305,8 @@ vacc_distro_pdf <-
 ```
 
 ```{r}
-ggsave("output/vacc_distro.pdf", plot = vacc_distro_pdf, device = cairo_pdf())
-ggsave("output/vacc_distro.png", plot = vacc_distro_pdf)
+ggsave("output/PNAS_updates/vacc_distro.eps", plot = vacc_distro_pdf)
+ggsave("output/PNAS_updates/vacc_distro.tiff", plot = vacc_distro_pdf)
 ```
 
 ## Simple Model
@@ -408,8 +408,8 @@ sm3
 ```
 
 ```{r}
-ggsave("output/simple_model.pdf", plot = sm3, device = cairo_pdf())
-ggsave("output/simple_model.png", plot = sm3)
+ggsave("output/PNAS_updates/simple_model.eps", plot = sm3)
+ggsave("output/PNAS_updates/simple_model.tiff", plot = sm3)
 ```
 
 ## Trunc Normal
@@ -503,8 +503,8 @@ pdf_plot2
 ```
 
 ```{r}
-ggsave("output/trunc_pdf_plot.pdf", plot = pdf_plot2, device = cairo_pdf())
-ggsave("output/trunc_pdf_plot.png", plot = pdf_plot2)
+ggsave("output/PNAS_updates/trunc_pdf_plot.eps", plot = pdf_plot2)
+ggsave("output/PNAS_updates/trunc_pdf_plot.tiff", plot = pdf_plot2)
 ```
 
 ```{r}
@@ -572,8 +572,8 @@ cdf_plot2
 ```
 
 ```{r}
-ggsave("output/PNAS_updates/trunc_cdf_plot.pdf", plot = cdf_plot2, device = cairo_pdf())
-ggsave("output/PNAS_updates/trunc_cdf_plot.png", plot = cdf_plot2)
+ggsave("output/PNAS_updates/trunc_cdf_plot.eps", plot = cdf_plot2)
+ggsave("output/PNAS_updates/trunc_cdf_plot.tiff", plot = cdf_plot2)
 ```
 
 ## Session Info
